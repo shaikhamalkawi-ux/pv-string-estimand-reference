@@ -1,0 +1,111 @@
+{
+  "admission": {
+    "lower_gpoa_wm2": 200,
+    "minimum_hours_per_day": 8,
+    "minimum_records_per_hour": 30,
+    "upper_gpoa_wm2": 1200
+  },
+  "exact_common": {
+    "all_pairs": [
+      {
+        "a": "String-A",
+        "b": "String-B",
+        "delta_b_minus_a_daily_median": -0.0050000000000000044,
+        "delta_b_minus_a_pooled": 0.0303921568627451,
+        "point_order_reversal": true
+      },
+      {
+        "a": "String-A",
+        "b": "String-C",
+        "delta_b_minus_a_daily_median": -0.22499999999999998,
+        "delta_b_minus_a_pooled": -0.2029411764705883,
+        "point_order_reversal": false
+      },
+      {
+        "a": "String-B",
+        "b": "String-C",
+        "delta_b_minus_a_daily_median": -0.21999999999999997,
+        "delta_b_minus_a_pooled": -0.2333333333333334,
+        "point_order_reversal": false
+      }
+    ],
+    "pair_count": 3,
+    "point_order_reversals": 1,
+    "string_statistics": {
+      "String-A": {
+        "daily_mean": 0.95,
+        "daily_median": 0.95,
+        "dates": 4,
+        "pooled_ratio": 0.9333333333333333,
+        "records": 1120
+      },
+      "String-B": {
+        "daily_mean": 0.955,
+        "daily_median": 0.945,
+        "dates": 4,
+        "pooled_ratio": 0.9637254901960784,
+        "records": 1120
+      },
+      "String-C": {
+        "daily_mean": 0.725,
+        "daily_median": 0.725,
+        "dates": 4,
+        "pooled_ratio": 0.7303921568627451,
+        "records": 1120
+      }
+    }
+  },
+  "exact_common_timestamp_count": 1120,
+  "scope": "synthetic demonstration; NOT a Qatar result or confidence analysis",
+  "shared_date_count": 4,
+  "string_specific": {
+    "all_pairs": [
+      {
+        "a": "String-A",
+        "b": "String-B",
+        "delta_b_minus_a_daily_median": -0.0050000000000000044,
+        "delta_b_minus_a_pooled": 0.0303921568627451,
+        "point_order_reversal": true
+      },
+      {
+        "a": "String-A",
+        "b": "String-C",
+        "delta_b_minus_a_daily_median": -0.22499999999999998,
+        "delta_b_minus_a_pooled": -0.2029411764705883,
+        "point_order_reversal": false
+      },
+      {
+        "a": "String-B",
+        "b": "String-C",
+        "delta_b_minus_a_daily_median": -0.21999999999999997,
+        "delta_b_minus_a_pooled": -0.2333333333333334,
+        "point_order_reversal": false
+      }
+    ],
+    "pair_count": 3,
+    "point_order_reversals": 1,
+    "string_statistics": {
+      "String-A": {
+        "daily_mean": 0.95,
+        "daily_median": 0.95,
+        "dates": 4,
+        "pooled_ratio": 0.9333333333333333,
+        "records": 1120
+      },
+      "String-B": {
+        "daily_mean": 0.955,
+        "daily_median": 0.945,
+        "dates": 4,
+        "pooled_ratio": 0.9637254901960784,
+        "records": 1120
+      },
+      "String-C": {
+        "daily_mean": 0.725,
+        "daily_median": 0.725,
+        "dates": 4,
+        "pooled_ratio": 0.7303921568627451,
+        "records": 1120
+      }
+    }
+  }
+}

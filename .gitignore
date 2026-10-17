@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.csv.tmp
+*.xlsx
+*.xls
+*.rar
+*.7z
+*.zip
+*.pdf
+*.tex
+*.log
+raw_data/
+private/
+restricted/
+*.env
+.env
+.DS_Store
