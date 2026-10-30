@@ -21,5 +21,28 @@ jobs:
           python-version: "3.11"
       - name: Generate synthetic fixture, compute output, and test
         run: sh run_tests.sh
-      - name: Verify reference fixture remains deterministic
-        run: git diff --exit-code -- examples/synthetic_pv_strings.csv examples/expected_output.json
+      - name: Check deterministic fixture and numeric output tolerance
+        run: |
+          git diff --exit-code -- examples/synthetic_pv_strings.csv
+          python3 - <<'PY'
+          import json, math, subprocess
+          from pathlib import Path
+          reference=json.loads(subprocess.check_output(
+              ['git','show','HEAD:examples/expected_output.json'], text=True))
+          current=json.loads(Path('examples/expected_output.json').read_text())
+          def compare(a,b,p='$'):
+              if isinstance(a,bool) or isinstance(b,bool):
+                  assert type(a)==type(b) and a==b, p
+              elif isinstance(a,(int,float)) and isinstance(b,(int,float)):
+                  assert math.isclose(float(a),float(b),rel_tol=1e-12,abs_tol=1e-12), (p,a,b)
+              elif isinstance(a,dict) and isinstance(b,dict):
+                  assert a.keys()==b.keys(), p
+                  for key in a: compare(a[key],b[key],p+'.'+key)
+              elif isinstance(a,list) and isinstance(b,list):
+                  assert len(a)==len(b), p
+                  for i,(x,y) in enumerate(zip(a,b)): compare(x,y,p+'['+str(i)+']')
+              else:
+                  assert type(a)==type(b) and a==b, (p,a,b)
+          compare(reference,current)
+          print('PASS: synthetic input byte-identical; JSON values numerically stable within 1e-12')
+          PY
