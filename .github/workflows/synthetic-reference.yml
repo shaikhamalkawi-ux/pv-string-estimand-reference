@@ -1,0 +1,25 @@
+name: Synthetic reference tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-aggregations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public synthetic code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Generate synthetic fixture, compute output, and test
+        run: sh run_tests.sh
+      - name: Verify reference fixture remains deterministic
+        run: git diff --exit-code -- examples/synthetic_pv_strings.csv examples/expected_output.json
