@@ -4,6 +4,16 @@ This repository is a **data-independent methodological demonstration** of how mo
 
 **It contains synthetic, fabricated measurements only. It does not contain Qatar field telemetry, proprietary identities, laboratory results, internal logger mappings, or the confidential QEERI/OTF research archive.** It does not reproduce a specific site's published numerical results or confidence intervals.
 
+## Peer-review access (Project 21 Qatar A, R14)
+
+This is the existing public synthetic-method reference cited in the author-review manuscript *When Can Photovoltaic String Rankings Support Field Decisions? An Estimand and Measurement-State Audit in Qatar and Italy* (R14-EP6-P3, 30 October 2026).
+
+**Reviewer instructions:** [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md).  
+**Automated synthetic checks:** [GitHub Actions](https://github.com/shaikhamalkawi-ux/pv-string-estimand-reference/actions).  
+**Direct repository address:** https://github.com/shaikhamalkawi-ux/pv-string-estimand-reference
+
+The public code is **not** the confidential Qatar bootstrap pipeline, does **not** rerun the Italian case, and does **not** reproduce the article's field numbers. It is a self-contained demonstration of support/admission, alternative aggregation estimands, and the constructed synthetic reversal. Rights for the distinct R12/R14 analysis archives are unresolved and those archives are not released here. The repository has **no public reuse licence or permanent archived DOI**; code inspection alone does not settle licensing.
+
 ## Use
 
 Python 3.9+; standard library only, no installation of external packages.
